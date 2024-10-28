@@ -1,0 +1,234 @@
+/*Xavi Rubio Monje*/
+*{box-sizing:border-box;}
+body
+{
+	background-color: rgb(163, 180, 204);
+    background-image: url("shoryuken.png");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: top;
+}
+div form{
+	width:300px;
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+	background-color:rgba(147, 203, 241, 0.5);
+}
+
+form label{
+	width:72px;
+	font-weight:bold;
+	
+}
+form input[type="email"],
+form input[type="text"]{
+	width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+
+div form input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	/*margin-top:32px;*/
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:rgba(11, 92, 116);
+} 
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+textarea{
+	width:100%;
+	height:100px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;			
+	margin:8px 0;
+	/*resize: vertical | horizontal | none | both*/
+	resize:none;
+	display:block;
+}
+#text
+{
+    width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+#text2
+{
+    width:180px;
+	padding:3px 10px;
+	border:1px solid #dbdbdb;
+	border-radius:3px;
+	background-color:#dbdbdb;
+	margin:8px 0;
+	display:inline-block;
+}
+#textArea2
+{
+	height: 90px;
+    width:180px;
+	padding:3px 10px;
+	border:1px solid #dbdbdb;
+	border-radius:3px;
+	background-color:#dbdbdb;
+	margin:8px 0;
+	display:inline-block;
+}
+#enviar
+{
+    width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:rgba(11, 92, 116);
+    text-align: center;
+}
+#gen
+{
+	background-color:rgb(94, 222, 222);
+	border-radius:5px;
+    margin:auto; 
+    width:100px;
+    border: 4px solid #090c72;
+}
+#Res
+{
+    width:100%;
+	padding:8px 16px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#043a1a;
+	background-color:rgb(11, 116, 43);
+    text-align: center;
+}
+#ResM
+{
+    width:100%;
+	padding:8px 16px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#ffbaba;
+	background-color:rgb(116, 11, 11);
+    text-align: center;
+}
+#TabCerc
+{
+	overflow-x: scroll;
+	display:inline-block;
+
+	margin: auto;
+    background-color:rgb(94, 222, 222);
+    width:auto;
+    text-align:center;
+    border-radius:5px;
+    border-bottom: 4px solid #090c72;
+    border-top: 4px solid #090c72;
+    border-left: 4px solid #090c72;
+    border-right: 4px solid #090c72;
+
+}
+#DadCerc
+{
+	border-radius:5px;
+    border: 10px solid #000;
+    border-collapse:collapse ;
+    margin:auto; 
+}
+div
+{
+	text-align:center;
+}
+#LoginForm
+{
+	display: flex; 
+	position: relative;
+	width:auto;
+	padding:16px;
+	border-radius:10px;
+	background-color:rgba(147, 203, 241, 0.5);
+
+	position: relative; /* or relative */
+	left: 95%;
+}
+#LoginButton
+{
+	padding: 3px;
+	margin-top: 0.6rem;
+	font-family: cursive;
+	font-weight: bold;
+}
+#LogOut
+{
+	padding: 3px;
+	margin-top: 0.6rem;
+	font-family: cursive;
+	font-weight: bold;
+}
+.buttonBloq
+{
+	width:100%;
+	padding:8px 16px;
+	/*margin-top:32px;*/
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:rgb(122, 124, 125);
+	background-color:rgb(80, 80, 81);
+	text-decoration:line-through;
+}
+#circle {
+	margin-left: 95.4%; 
+	background: rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+#circle div{
+    background: rgba(11, 92, 116);;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+#circle div h1{
+   color: #ffffff;
+}
+#titulo
+{
+	text-align: left; 
+	font-family: Arial Black; 
+	font-weight: bold; font-size: 35px; 
+	background: #202020; 
+	-webkit-background-clip: text; 
+	-moz-background-clip: text; 
+	background-clip: text; 
+	color: transparent; 
+	text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+	text-align: center;
+}
