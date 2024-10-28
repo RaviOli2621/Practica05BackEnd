@@ -10,7 +10,7 @@
 <body>
     <?php include"../controlador/acabaSession.php";?>
     <?php include"../controlador/altres/icone.php";?>
-    ?>
+    
     <table id="gen" class="table_2">
         <form method="post" action="<?php echo htmlentities($_SERVER["PHP_SELF"]);?>">
             <tr> <!--Titol-->

@@ -11,7 +11,7 @@ session_start();
 
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
+            include "altres/conexio.php";
             $comprobar = $connexio->prepare("SELECT Correu,Usuari,Contrasenya FROM usuaris WHERE (Usuari = :Usuari)");
                         
             $comprobar->bindParam(":Usuari",$Usuari);

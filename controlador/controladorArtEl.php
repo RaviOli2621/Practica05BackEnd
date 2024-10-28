@@ -5,7 +5,7 @@ include  "../model/model.php";
     {
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
+            include "altres/conexio.php";
             $eliminar = $connexio->prepare("DELETE FROM articles WHERE(titol = :titol)");
             $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol = :titulo AND Usuari = :Usuari");
                         

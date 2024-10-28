@@ -3,24 +3,26 @@
 include  "../model/model.php";
     function buscar($titol,$cos)//Funció per cercar dades a la BD
     { 
+        $cos = "%".$cos."%";
+        $titol = "%".$titol."%";
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
+            include "altres/conexio.php";
             if($titol != "")
             {
                 if($cos != "")
                 {
-                    $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol = :titulo AND cos = :cuerpo");
+                    $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol LIKE :titulo AND cos LIKE :cuerpo");
                     $comprobar->bindParam(":titulo",$titol);
                     $comprobar->bindParam(":cuerpo",$cos);
                 }else
                 {
-                    $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol = :titulo");
+                    $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol LIKE :titulo");
                     $comprobar->bindParam(":titulo",$titol);
                 } 
             }else if($cos != "")
             {
-                $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE cos = :cuerpo");
+                $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE cos LIKE :cuerpo");
                 $comprobar->bindParam(":cuerpo",$cos);
             }else
             {

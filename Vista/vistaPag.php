@@ -17,7 +17,7 @@
 		<div id ="div"><!--Resultat-->
         <?php
                 include_once "../Controlador/controladorArtPag.php";
-                    
+				if(isset($_COOKIE['ordre']))$_POST['ordre'] = $_COOKIE['ordre']; // setejar la variable de ordre 
 					$cantidad;
 					foreach (cantidad() as $dada=>$valor){ //aconseguir la quantitat de dades
 						foreach ($valor as $dada2=>$valor2){
@@ -51,7 +51,7 @@
 
 					do//si estas en una pàgina sin datos, te manda a la pàgina 1
 					{
-						$result = articles($n ?? "",$a ?? "");
+						$result = articles($n ?? "",$a ?? "", $_POST['ordre'] ?? "");
 						$resTxt = "";
 						$hayContenido = false;
 						foreach ($result as $dada=>$valor){//imprimir datos
@@ -120,7 +120,8 @@
 					//si esta en la ultima página no se muestre la flecha de adelante
 					if($_POST['NumPag'] < $cantidad) echo"<li class=\"*disabled\"><a href=\"javascript:;\" onclick=\"document.getElementById('NumPag').value=(Number(document.getElementById('NumPag').value)+1);document.getElementById('cambPag').submit()\">&raquo;</a></li>";
 					//Si el número del article es 0 o menor es posa en 1
-					echo"<br><br><b>Articles per pàgina:	<b>";
+					echo"<div id='derecha'><div>";
+					echo"<b>Articles per pàgina:	<b><br>";
 					if(isset($_POST["artPag"]) && ($_POST['artPag']) > 0)
 					{
 						echo"<input type=\"number\" name=\"artPag\" id=\"artPag\" pattern=\"[0-9]+\" onchange=\"document.getElementById('cambPag').submit()\" value=\"".$_POST['artPag']."\">";
@@ -129,10 +130,19 @@
 						echo"<input type=\"number\" name=\"artPag\" id=\"artPag\" pattern=\"[0-9]+\" onchange=\"document.getElementById('cambPag').submit()\" value=\"1\">";
 						$_POST['artPag'] = 1; 
 					}
-					include("../controlador/cookies/cookiesPaginacio.php");
+					echo"</div>";
 				?>
+				<div>
+					<b>Ordenar:<b><br>
+					<select name="ordre" id="ordre" onchange="document.getElementById('cambPag').submit()">
+						<option disabled <?php if(!isset($_POST['ordre'])) echo"selected"; ?>>Nothing</option>
+						<option <?php if(isset($_POST['ordre']) && $_POST['ordre'] == "A-Z") echo"selected"; ?> value="A-Z">A-Z</option>
+						<option <?php if(isset($_POST['ordre']) && $_POST['ordre'] == "Z-A") echo"selected"; ?> value="Z-A">Z-A</option>
+					</select>
+				</div>
+				</div>
 			</ul>
-			
+			<?php include("../controlador/cookies/cookiesPaginacio.php"); ?>
 		</section>
 		</form>
 		<br>

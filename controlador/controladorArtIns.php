@@ -5,7 +5,7 @@ include  "../model/model.php";
     {
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
+            include "altres/conexio.php";
             $insertar = $connexio->prepare("INSERT INTO articles (titol,Usuari,cos) VALUES(:titol, :Usuari ,:cos)");
             $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol = :titulo");
                         

@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `pt04_xavi_rubio`
+-- Base de datos: `pt05_xavi_rubio`
 --
 
 -- --------------------------------------------------------
@@ -26,10 +26,10 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `articles`
 --
-DROP DATABASE IF EXISTS pt04_xavi_rubio; 
-CREATE DATABASE pt04_xavi_rubio;
+DROP DATABASE IF EXISTS pt05_xavi_rubio; 
+CREATE DATABASE pt05_xavi_rubio;
 
-USE pt04_xavi_rubio;
+USE pt05_xavi_rubio;
 
 CREATE TABLE `articles` (
   `ID` int(5) NOT NULL,

@@ -29,7 +29,7 @@ function encriptar($contra)
 
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
+            include "altres/conexio.php";
             $insertar = $connexio->prepare("INSERT INTO usuaris (Correu,Usuari,Contrasenya) VALUES(:Correu,:Usuari,:Contrasenya)");
             $comprobar = $connexio->prepare("SELECT Correu,Usuari,Contrasenya FROM usuaris WHERE (Correu = :Correu)");
             $comprobar2 = $connexio->prepare("SELECT Correu,Usuari,Contrasenya FROM usuaris WHERE (Usuari = :Usuari)");
@@ -73,7 +73,7 @@ function encriptar($contra)
 
             $NovaCn = encriptar($NovaCn);
             
-            $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
+            include "altres/conexio.php";
             $modificar = $connexio->prepare("UPDATE usuaris SET Contrasenya = :Contrasenya WHERE Usuari = :Usuari;");
             $modificar->bindParam(":Contrasenya",$NovaCn);
             $modificar->bindParam(":Usuari",$Usuari);

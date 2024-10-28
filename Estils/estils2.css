@@ -157,3 +157,11 @@ div
 #circle div h1{
    color: #ffffff;
 }
+div #derecha
+{
+	justify-content: center;
+
+	display: flex;
+		vertical-align:top;
+
+}

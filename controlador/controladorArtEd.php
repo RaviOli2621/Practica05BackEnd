@@ -5,7 +5,7 @@ include  "../model/model.php";
     {
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
+            include "altres/conexio.php";
             $actualizar = $connexio->prepare("UPDATE articles SET titol = :titol, cos = :cos WHERE titol = :titolOr");
             $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol = :titulo AND Usuari = :Usuari");
                         
