@@ -23,11 +23,8 @@
         //Depende de si estas logueado te salen unos botones o otros
         if(isset($_SESSION['Usuari']) && !isset($_POST['LogOut']))
         {
-            echo '<div id="circle">
-                <div>
-                    <h1>'.substr($_SESSION['Usuari'],0,1).'</h1>
-                </div>
-            </div>';
+            include "./controlador/altres/icone.php";
+
             include "./Vista/indexVista/Desbloquejat.html";
             //print_r("<h1>".($_SESSION['Tiempo'])."</h1>");
         }else

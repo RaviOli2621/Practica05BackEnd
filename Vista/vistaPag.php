@@ -17,7 +17,7 @@
 		<div id ="div"><!--Resultat-->
         <?php
                 include_once "../Controlador/controladorArtPag.php";
-				if(isset($_COOKIE['ordre']))$_POST['ordre'] = $_COOKIE['ordre']; // setejar la variable de ordre 
+				if(isset($_COOKIE['ordre']) && !isset($_POST['ordre']))$_POST['ordre'] = $_COOKIE['ordre']; // setejar la variable de ordre 
 					$cantidad;
 					foreach (cantidad() as $dada=>$valor){ //aconseguir la quantitat de dades
 						foreach ($valor as $dada2=>$valor2){
@@ -34,6 +34,11 @@
 						$cantidad = round($cantidad/$a);
 						if(($_POST['NumPag']) > 0) $n = (int)($_POST['NumPag']);//que la pagina no sean mas pequeña que 1
 						else $n = 1;
+						if(($_POST['NumPag']) > $cantidad)
+						{
+							$n = $cantidad;
+							$_POST['NumPag'] = $n;
+						}
 					}else if(isset($_COOKIE['articles']))
 					{
 						$a = $_COOKIE['articles'];
